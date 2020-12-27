@@ -50,7 +50,7 @@ public:
 		{
 			total += bp[i].getPrice();
 		}
-		cout << "Number of products: "<< adder << endl;
+		cout << "Number of products: " << adder << endl;
 		cout << "Total to pay: $" << total << endl;
 	}
 	void add(Product *p, Product *bp, int chosenElem){
@@ -58,7 +58,6 @@ public:
 		cout << "Number: " << adder << " || Name: " + bp[adder].getName() + "  Price: $" << bp[adder].getPrice() << endl;
 		adder++;
 	}
-	void search(string);
 	void display(Product *p, int size){
 		for (int i = 0; i < size; i++)
 		{
@@ -66,7 +65,6 @@ public:
 			cout << " || Name: " + p[i].getName() + "  Price: $" << p[i].getPrice() << endl;
 		}
 	}
-private:
 };
 enum MenuControls
 {
@@ -76,11 +74,9 @@ bool start();
 void MainMenu();
 void logIn();
 int main(){
-
 	MainMenu();
 	system("pause");
 	return 0;
-
 }
 bool start(){
 	bool h = 1;
@@ -92,7 +88,6 @@ bool start(){
 		cin >> username;
 		cout << "Password ->";
 		cin >> password;
-
 		if (username == "exit")
 			return false;
 		if (username == "user" && password == "1234")
@@ -115,7 +110,6 @@ void logIn(){
 	cout << "Provide your delivery address -> \n";
 	cin >> address;
 	c.createCustomer(name, address);
-
 }
 void MainMenu(){
 	Product product[6];
@@ -157,6 +151,10 @@ void MainMenu(){
 			case EXIT:
 				return;
 				break;
+			default:
+				cout << "Try again!\n";
+				break;
+
 			}
 		}
 	}
